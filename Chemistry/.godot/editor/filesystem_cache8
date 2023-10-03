@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1696333143
+control.tscn::PackedScene::5069680095165553525::1695281931::0::1::::<><>::
+icon.svg::CompressedTexture2D::8294292518946426541::1695282320::1696333145::1::::<><>::
+mainscen.tscn::PackedScene::2950922836437621184::1696319376::0::1::::<><>::res://MainSystem.gd
+MainSystem.gd::GDScript::-1::1696319374::0::1::::<>Node2D<>::
+::res://addons/::1695282543
+::res://addons/godot-sqlite/::1695282544
+gdsqlite.gdextension::GDExtension::-1::1695282544::0::1::::<><>::
+godot-sqlite.gd::GDScript::-1::1695282544::0::1::::<>EditorPlugin<>::
+LICENSE.md::TextFile::-1::1695282543::0::1::::<><>::
+plugin.cfg::TextFile::-1::1695282544::0::1::::<><>::
+::res://addons/godot-sqlite/bin/::1695282544
+::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/::1695282544
+::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/::1695282544
+::res://database/::1695891250

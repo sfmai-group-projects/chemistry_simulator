@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cpytob4afa3g2"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PacHomeMolecules2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="PacHomeMolecules2"]
+layout_mode = 0
+offset_left = 15.0
+offset_right = 215.0
+offset_bottom = 60.0
+
+[node name="Button" type="Button" parent="PacHomeMolecules2/MarginContainer2"]
+clip_contents = true
+layout_mode = 2
+text = "Вещество"
+
+[node name="MarginContainer" type="MarginContainer" parent="PacHomeMolecules2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ColorRect" type="ColorRect" parent="PacHomeMolecules2/MarginContainer"]
+layout_mode = 2

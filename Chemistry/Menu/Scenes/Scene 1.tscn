@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://deodgikubdrhq"]
+
+[ext_resource type="Texture2D" uid="uid://c750hh6yr3ncg" path="res://Menu/PAC_home_molecules 2.png" id="1_1baru"]
+[ext_resource type="Script" path="res://Menu/Scenes/Scene 1.gd" id="1_qp2qh"]
+[ext_resource type="FontFile" uid="uid://c26prdcm0dljk" path="res://Menu/Cuprum/static/Cuprum-Regular.ttf" id="3_n1m5s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro35p"]
+bg_color = Color(0, 0, 0, 0)
+border_width_bottom = 5
+border_color = Color(0, 0.713726, 0.937255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol231"]
+bg_color = Color(0, 0.713726, 0.937255, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm1ep"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Scene 1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qp2qh")
+
+[node name="PacHomeMolecules2" type="Sprite2D" parent="."]
+position = Vector2(962, 541)
+texture = ExtResource("1_1baru")
+
+[node name="Main" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+color = Color(0.701961, 0.8, 0.890196, 0.792157)
+
+[node name="Mode" type="RichTextLabel" parent="Main"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 34.0
+offset_top = 49.0
+offset_right = 430.0
+offset_bottom = 89.0
+theme_override_fonts/normal_font = ExtResource("3_n1m5s")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ro35p")
+text = "Игровой режим"
+
+[node name="Custom" type="Button" parent="Main"]
+custom_minimum_size = Vector2(392, 70)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 134.0
+offset_right = 430.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n1m5s")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ol231")
+text = "Песочница"
+
+[node name="Trial" type="Button" parent="Main"]
+custom_minimum_size = Vector2(392, 70)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 248.0
+offset_right = 428.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n1m5s")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_lm1ep")
+text = "Испытания"
+
+[node name="Back" type="Button" parent="Main"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 51.0
+offset_top = 380.0
+offset_right = 132.0
+offset_bottom = 426.0
+theme_override_fonts/font = ExtResource("3_n1m5s")
+theme_override_font_sizes/font_size = 32
+text = "Назад"
+flat = true
+
+[connection signal="button_down" from="Main/Custom" to="." method="_on_custom_button_down"]
+[connection signal="button_down" from="Main/Back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="Main/Back" to="Main/Back" method="_on_button_down"]

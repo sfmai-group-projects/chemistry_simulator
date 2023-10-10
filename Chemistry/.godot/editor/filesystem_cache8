@@ -1,16 +1,41 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696333143
-control.tscn::PackedScene::5069680095165553525::1695281931::0::1::::<><>::
-icon.svg::CompressedTexture2D::8294292518946426541::1695282320::1696333145::1::::<><>::
-mainscen.tscn::PackedScene::2950922836437621184::1696319376::0::1::::<><>::res://MainSystem.gd
+::res://::1696969532
+control.tscn::PackedScene::5069680095165553525::1696923470::0::1::::<><>::
+icon.svg::CompressedTexture2D::8294292518946426541::1696923470::1696923470::1::::<><>::
+mainscen.tscn::PackedScene::6650613881551425563::1696969532::0::1::::<><>::
 MainSystem.gd::GDScript::-1::1696319374::0::1::::<>Node2D<>::
 ::res://addons/::1695282543
-::res://addons/godot-sqlite/::1695282544
-gdsqlite.gdextension::GDExtension::-1::1695282544::0::1::::<><>::
-godot-sqlite.gd::GDScript::-1::1695282544::0::1::::<>EditorPlugin<>::
-LICENSE.md::TextFile::-1::1695282543::0::1::::<><>::
-plugin.cfg::TextFile::-1::1695282544::0::1::::<><>::
-::res://addons/godot-sqlite/bin/::1695282544
-::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/::1695282544
-::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/::1695282544
-::res://database/::1695891250
+::res://addons/godot-sqlite/::1696965341
+gdsqlite.gdextension::GDExtension::-1::1696923470::0::1::::<><>::
+godot-sqlite.gd::GDScript::-1::1696923470::0::1::::<>EditorPlugin<>::
+LICENSE.md::TextFile::-1::1696923469::0::1::::<><>::
+plugin.cfg::TextFile::-1::1696923470::0::1::::<><>::
+::res://addons/godot-sqlite/bin/::1696965341
+::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/::1696965341
+::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/::1696965341
+::res://database/::1696965341
+::res://Menu/::1696965341
+PAC_home_molecules 2.png::CompressedTexture2D::7082346538468198958::1696760129::1696925430::1::::<><>::
+::res://Menu/Cuprum/::1696970669
+Cuprum-Italic-VariableFont_wght.ttf::FontFile::9087054810378956456::1333483200::1696925429::1::::<><>::
+Cuprum-VariableFont_wght.ttf::FontFile::2591791360245862604::1333483200::1696925429::1::::<><>::
+Cuprum.ttf::FontFile::4655597152580754475::1617697280::1696970673::1::::<><>::
+OFL.txt::TextFile::-1::1333483200::0::1::::<><>::
+::res://Menu/Cuprum/static/::1696965341
+Cuprum-Bold.ttf::FontFile::1224190409264003004::1333483200::1696925429::1::::<><>::
+Cuprum-BoldItalic.ttf::FontFile::1244657910968830336::1333483200::1696925429::1::::<><>::
+Cuprum-Italic.ttf::FontFile::2781687301516372633::1333483200::1696925429::1::::<><>::
+Cuprum-Medium.ttf::FontFile::6028360996455681844::1333483200::1696925429::1::::<><>::
+Cuprum-MediumItalic.ttf::FontFile::1130065978444963486::1333483200::1696925429::1::::<><>::
+Cuprum-Regular.ttf::FontFile::6732877130615233424::1333483200::1696925429::1::::<><>::
+Cuprum-SemiBold.ttf::FontFile::7346831378900384070::1333483200::1696925429::1::::<><>::
+Cuprum-SemiBoldItalic.ttf::FontFile::2607377836005254744::1333483200::1696925429::1::::<><>::
+::res://Menu/Scenes/::1696969532
+Game.gd::GDScript::-1::1696925780::0::1::::<>Node<>::
+Game.tscn::PackedScene::5876397809360746343::1696969532::0::1::::<><>::
+Menu.gd::GDScript::-1::1696767704::0::1::::<>Control<>::
+Menu.tscn::PackedScene::3018483204007349327::1696969532::0::1::::<><>::res://Menu/Scenes/Menu.gd<>uid://c750hh6yr3ncg::::res://Menu/PAC_home_molecules 2.png<>uid://c26prdcm0dljk::::res://Menu/Cuprum/static/Cuprum-Regular.ttf<>uid://d2p3p2v7w4yuy::::res://Menu/Cuprum/Cuprum-Italic-VariableFont_wght.ttf
+Scene 1.gd::GDScript::-1::1696925989::0::1::::<>Control<>::
+Scene 1.tscn::PackedScene::7469112016475026282::1696969532::0::1::::<><>::uid://c750hh6yr3ncg::::res://Menu/PAC_home_molecules 2.png<>res://Menu/Scenes/Scene 1.gd<>uid://c26prdcm0dljk::::res://Menu/Cuprum/static/Cuprum-Regular.ttf
+::res://Menu/Script text/::1696965341
+Play.gd::GDScript::-1::1696767316::0::1::::<>Button<>::

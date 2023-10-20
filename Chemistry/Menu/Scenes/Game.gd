@@ -3,12 +3,17 @@ extends Node
 
 var db
 var db_name="res://database/chemBase.sqlite"
+var panel =null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	db = SQLite.new()
 	db.path=db_name
 	connect_db()
 	read_elements()
+	
+	panel = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/CanvasLayerMatter2
+	panel.visible = false
+	
 	pass # Replace with function body.
 
 
@@ -31,3 +36,16 @@ func read_elements():
 	db.query("SELECT * FROM main.elements LIMIT 49999 OFFSET 0;")
 	for i in range(0, db.query_result.size()):
 		print(db.query_result[i]["id"], " ",db.query_result[i]["symbol"]," ",db.query_result[i]["name"])
+
+
+
+
+
+func _on_matter_2_mouse_entered():
+	panel.show()
+	pass # Replace with function body.
+
+
+func _on_matter_2_mouse_exited():
+	panel.hide()
+	pass # Replace with function body.

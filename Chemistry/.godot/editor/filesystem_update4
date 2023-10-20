@@ -2,3 +2,5 @@ res://mainscen.tscn
 res://Menu/Scenes/Menu.tscn
 res://Menu/Scenes/Scene 1.tscn
 res://Menu/Scenes/Game.tscn
+res://Menu/Scenes/Scene 2.tscn
+res://Menu/Scenes/Game.gd

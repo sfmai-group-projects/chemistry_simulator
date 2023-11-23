@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZXaD3j0UUeeIsdbqe4A0yPimGZRP9oLXvjJOYSicnxXMqB6kqVA+a+SnHwPAkOkEXnJ6XK0nUv+x3Q6dOM+Mlw==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\chase\\Desktop\\MAI\\chemistry_simulator\\Chemistry\\Chemistry.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\New\\.nuget\\packages\\godot.sourcegenerators\\4.1.3\\godot.sourcegenerators.4.1.3.nupkg.sha512",
+    "C:\\Users\\New\\.nuget\\packages\\godotsharp\\4.1.3\\godotsharp.4.1.3.nupkg.sha512",
+    "C:\\Users\\New\\.nuget\\packages\\godotsharpeditor\\4.1.3\\godotsharpeditor.4.1.3.nupkg.sha512",
+    "C:\\Users\\New\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\New\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\New\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

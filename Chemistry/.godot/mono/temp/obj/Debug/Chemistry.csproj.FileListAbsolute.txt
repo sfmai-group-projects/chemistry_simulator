@@ -1,0 +1,5 @@
+D:\Users\chase\Desktop\MAI\chemistry_simulator\Chemistry\.godot\mono\temp\obj\Debug\Chemistry.csproj.AssemblyReference.cache
+D:\Users\chase\Desktop\MAI\chemistry_simulator\Chemistry\.godot\mono\temp\obj\Debug\Chemistry.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\chase\Desktop\MAI\chemistry_simulator\Chemistry\.godot\mono\temp\obj\Debug\Chemistry.AssemblyInfoInputs.cache
+D:\Users\chase\Desktop\MAI\chemistry_simulator\Chemistry\.godot\mono\temp\obj\Debug\Chemistry.AssemblyInfo.cs
+D:\Users\chase\Desktop\MAI\chemistry_simulator\Chemistry\.godot\mono\temp\obj\Debug\Chemistry.csproj.CoreCompileInputs.cache

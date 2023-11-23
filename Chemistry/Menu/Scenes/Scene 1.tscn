@@ -109,5 +109,5 @@ text = "Назад"
 flat = true
 
 [connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Custom" to="." method="_on_custom_button_down"]
+[connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Trial" to="." method="_on_trial_button_down"]
 [connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Back" to="." method="_on_back_button_down"]
-[connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Back" to="PacHomeMolecules2/MarginContainer/Main/Back" method="_on_button_down"]

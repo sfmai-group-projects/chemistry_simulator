@@ -10,3 +10,7 @@ func _on_back_button_down():
 
 func _on_custom_button_down():
 	get_tree().change_scene_to_file("res://Menu/Scenes/Game.tscn")
+
+
+func _on_trial_button_down():
+	get_tree().change_scene_to_file("res://Menu/Scenes/test.tscn")# Replace with function body.

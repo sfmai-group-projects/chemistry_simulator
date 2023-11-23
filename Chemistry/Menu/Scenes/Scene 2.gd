@@ -2,7 +2,7 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
-ALIGNMENT_LEFT =0
+#ALIGNMENT_LEFT =0
 	
 
 

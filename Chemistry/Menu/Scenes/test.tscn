@@ -39,9 +39,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_uhk5s")
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/ColorRect/ScrollContainer"]
 layout_mode = 2
 
-[node name="VScrollBar" type="VScrollBar" parent="Background/ColorRect/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="TextureRect" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
@@ -49,8 +46,9 @@ anchor_right = 0.062
 anchor_bottom = 0.062
 offset_left = 478.0
 offset_top = 194.0
-offset_right = 662.576
-offset_bottom = 385.824
+offset_right = 530.576
+offset_bottom = 199.824
+expand_mode = 1
 
 [node name="textB" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -61,3 +59,24 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 grow_horizontal = 0
 grow_vertical = 2
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 638.0
+offset_top = 390.0
+offset_right = 1029.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TEXT TEXT TEXT"

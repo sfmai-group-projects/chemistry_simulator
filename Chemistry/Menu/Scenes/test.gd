@@ -17,30 +17,42 @@ func connect_db():
 
 func createScroll():
 	db.open_db()
-	db.query("SELECT * FROM main.elements LIMIT 49999 OFFSET 0;")
-
+	db.query("SELECT * FROM main.elements WHERE main.elements.stateid = 1 LIMIT 49999 OFFSET 0;")
+	
 	var sc = $Background/ColorRect/ScrollContainer/VBoxContainer
 	##db.query_with_params("SELECT img FROM main.elements WHERE id = 1")
 	#image_data = await(get_node(db.query_with_params("SELECT img FROM main.elements WHERE id = 1")))
-	#var textB = $Background/textB
-	#textB.set_texture_normal(load("res://assets/img/1.png"))
+	var textB = $Background/TextureRect
+	textB.texture = load("res://assets/img/1.png")
+	var n = 50
 	for i in range(0, db.query_result.size()):
-		var tb = TextureButton.new()
-		tb.name = "tb_" +  str(db.query_result[i]["id"])
-		var path = db.query_result[i]["imglink"]
-		var textureButton = load(path)
-		tb.set_texture_normal(textureButton)
-	#	tb.set_stretch_mode(0)
-		var tf = Label.new()
-		tf.text = str(db.query_result[i]["id"])
-		sc.add_child(tf)
 		
+		var button = Button.new()
+		sc.add_child(button)
+		button.set_custom_minimum_size(Vector2(300,50))
+		
+		var hboxcon = HBoxContainer.new()
+		hboxcon.set_h_size_flags(0)
+		hboxcon.set_v_size_flags(0)
+		button.add_child(hboxcon)
+		
+		var texture = TextureRect.new()
+		
+		var path = db.query_result[i]["imglink"]
+		texture.texture = load(path)
+		texture.set_expand_mode(3)
+		texture.set_stretch_mode(0)
+		texture.set_stretch_ratio(1)
 
-# Set size and position of scrollbar
-	#$Background/ScrollContainer/VScrollBar/Container/HScrollBar.rect_min_size = $Background/ScrollContainer/VBoxContainer.rect_max
-	#$Background/VBoxContainer/VScrollBar.hide = false
-	#$Background/VScrollContainer.v_size_flags = 0
-	#$Background/VScrollContainer.connect("scroll_ended", self, "_on_scroll_ended") # Replace with function body.
+		hboxcon.size = Vector2(50,50)
+		
+		hboxcon.add_child(texture)
+		
+		var lable = Label.new()
+		
+		lable.text = "    "+str(db.query_result[i]["id"])+" "+str(db.query_result[i]["name"])
+		lable.set_stretch_ratio(1)
+		hboxcon.add_child(lable)
 
 	
 func _ready():

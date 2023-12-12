@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpytob4afa3g2"]
+[gd_scene load_steps=3 format=3 uid="uid://cpytob4afa3g2"]
 
 [ext_resource type="Script" path="res://Menu/Scenes/Game.gd" id="1_yuqpy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kw86"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -42,6 +44,7 @@ clip_contents = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = -15.0
 offset_bottom = 633.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 15
@@ -56,6 +59,103 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Matter1" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MatterLeft" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1"]
+
+[node name="LeftBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft"]
+offset_left = 15.0
+offset_top = 60.0
+offset_right = 365.0
+offset_bottom = 633.0
+color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="ButtonSolidL" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "1"
+
+[node name="ButtonLiquidL" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 100.0
+text = "2"
+
+[node name="ButtonGasL" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 50.0
+offset_bottom = 150.0
+text = "3"
+
+[node name="SolidLayerL" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack"]
+
+[node name="LeftSolidBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/SolidLayerL"]
+offset_left = 65.0
+offset_top = 60.0
+offset_right = 360.0
+offset_bottom = 628.0
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/SolidLayerL/LeftSolidBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8kw86")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/SolidLayerL/LeftSolidBack/ScrollContainer"]
+layout_mode = 2
+
+[node name="LiquidLayerL" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack"]
+
+[node name="LeftLiquidBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/LiquidLayerL"]
+offset_left = 65.0
+offset_top = 60.0
+offset_right = 360.0
+offset_bottom = 628.0
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/LiquidLayerL/LeftLiquidBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8kw86")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/LiquidLayerL/LeftLiquidBack/ScrollContainer"]
+layout_mode = 2
+
+[node name="GasLayerL" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack"]
+
+[node name="LeftGasBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/GasLayerL"]
+offset_left = 65.0
+offset_top = 60.0
+offset_right = 360.0
+offset_bottom = 628.0
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/GasLayerL/LeftGasBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8kw86")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/GasLayerL/LeftGasBack/ScrollContainer"]
+layout_mode = 2
+
 [node name="Right" type="MarginContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
@@ -66,11 +166,127 @@ custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="CanvasLayerMatter2" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right"]
+[node name="MatterRight" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/CanvasLayerMatter2"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="RightBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight"]
+offset_left = 772.0
+offset_top = 60.0
+offset_right = 1122.0
+offset_bottom = 633.0
+color = Color(0.47451, 0.47451, 0.47451, 1)
 
+[node name="ButtonSolidR" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack"]
+layout_mode = 0
+offset_left = 300.0
+offset_right = 350.0
+offset_bottom = 50.0
+text = "1"
+
+[node name="ButtonLiquidR" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 100.0
+text = "2"
+
+[node name="ButtonGasR" type="Button" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 100.0
+offset_right = 351.0
+offset_bottom = 150.0
+text = "3"
+
+[node name="SolidLayerR" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack"]
+visible = false
+
+[node name="RightSolidBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/SolidLayerR"]
+offset_left = 777.0
+offset_top = 60.0
+offset_right = 1072.0
+offset_bottom = 628.0
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/SolidLayerR/RightSolidBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8kw86")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/SolidLayerR/RightSolidBack/ScrollContainer"]
+layout_mode = 2
+
+[node name="LiquidLayerR" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack"]
+visible = false
+
+[node name="RightLiquidBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/LiquidLayerR"]
+offset_left = 777.0
+offset_top = 60.0
+offset_right = 1072.0
+offset_bottom = 628.0
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/LiquidLayerR/RightLiquidBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8kw86")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/LiquidLayerR/RightLiquidBack/ScrollContainer"]
+layout_mode = 2
+
+[node name="GasLayerR" type="CanvasLayer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack"]
+
+[node name="RightGasBack" type="ColorRect" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/GasLayerR"]
+offset_left = 777.0
+offset_top = 60.0
+offset_right = 1072.0
+offset_bottom = 628.0
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/GasLayerR/RightGasBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8kw86")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/GasLayerR/RightGasBack/ScrollContainer"]
+layout_mode = 2
+
+[node name="TestLable" type="Label" parent="PacHomeMolecules2"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 86.0
+offset_right = 662.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
+
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1" to="." method="_on_matter_1_mouse_entered"]
+[connection signal="mouse_exited" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1" to="." method="_on_matter_1_mouse_exited"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack" to="." method="_on_left_back_mouse_entered"]
+[connection signal="mouse_exited" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack" to="." method="_on_left_back_mouse_exited"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/ButtonSolidL" to="." method="_on_button_solid_l_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/ButtonLiquidL" to="." method="_on_button_liquid_l_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/ButtonGasL" to="." method="_on_button_gas_l_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/LiquidLayerL/LeftLiquidBack" to="." method="_on_left_liquid_back_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/GasLayerL/LeftGasBack" to="." method="_on_left_gas_back_mouse_entered"]
 [connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2" to="." method="_on_matter_2_mouse_entered"]
 [connection signal="mouse_exited" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2" to="." method="_on_matter_2_mouse_exited"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack" to="." method="_on_right_back_mouse_entered"]
+[connection signal="mouse_exited" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack" to="." method="_on_right_back_mouse_exited"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/ButtonSolidR" to="." method="_on_button_solid_r_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/ButtonLiquidR" to="." method="_on_button_liquid_r_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/ButtonGasR" to="." method="_on_button_gas_r_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/SolidLayerR/RightSolidBack" to="." method="_on_right_solid_back_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/LiquidLayerR/RightLiquidBack" to="." method="_on_right_liquid_back_mouse_entered"]
+[connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/GasLayerR/RightGasBack" to="." method="_on_right_gas_back_mouse_entered"]

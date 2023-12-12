@@ -4,6 +4,8 @@ extends Node
 var db
 var db_name="res://database/chemBase.sqlite"
 
+var mix_button = null
+
 var panel_r = null
 var panel_solid_r = null
 var panel_liquid_r = null
@@ -20,13 +22,16 @@ var panel_gas_l = null
 var buttonsLeft_solid = []
 var buttonsLeft_liquid = []
 var buttonsLeft_gas = []
-
+var matter1 = null;
+var matter2 = null;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	db = SQLite.new()
 	db.path=db_name
 	connect_db()
 	
+	mix_button = $testButton
+	mix_button.disabled = true
 	panel_r = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight
 	panel_solid_r = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/SolidLayerR
 	panel_liquid_r = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/LiquidLayerR
@@ -65,10 +70,10 @@ func _ready():
 		btn.pressed.connect(button_action_left_solid.bind(btn))
 	read_elements_liquid_l()
 	for btn in buttonsLeft_liquid:
-		btn.pressed.connect(button_action_right_liquid.bind(btn))
+		btn.pressed.connect(button_action_left_liquid.bind(btn))
 	read_elements_gas_l()
 	for btn in buttonsLeft_gas:
-		btn.pressed.connect(button_action_right_gas.bind(btn))
+		btn.pressed.connect(button_action_left_gas.bind(btn))
 		
 		
 		
@@ -309,6 +314,15 @@ func read_elements_gas_l():
 		lable.set_stretch_ratio(1)
 		hboxcon.add_child(lable)
 
+func import_matter(id):
+	db.open_db()
+	db.query("SELECT * FROM main.elements WHERE main.elements.id = " + str(id) + ";")
+	return db.query_result
+	
+func visible_butoon_mix(matter_one,matter_two):
+	if ((matter_one != null) and (matter_two != null)):
+		mix_button.disabled = false
+
 
 
 func _on_matter_2_mouse_entered():
@@ -400,28 +414,69 @@ func _on_left_gas_back_mouse_entered():
 
 
 func button_action_right_solid(btn:Button) -> void:
-	testLable.text += str(btn.name)+"\n"
+	
+	matter2 = import_matter(btn.name)
+#	testLable.text += str(matter2[0]["electronegativity"])
 	panel_r.hide()
 	panel_solid_r.hide()
+	visible_butoon_mix(matter1,matter2)
 func button_action_right_liquid(btn:Button) ->void:
-	testLable.text += str(btn.name)+"\n"
+	matter2 = import_matter(btn.name)
+#	testLable.text += str(matter2[0]["electronegativity"])
 	panel_r.hide()
 	panel_liquid_r.hide()
+	visible_butoon_mix(matter1,matter2)
 func button_action_right_gas(btn:Button) ->void:
-	testLable.text += str(btn.name)+"\n"
+	matter2 = import_matter(btn.name)
+#	testLable.text += str(matter2[0]["electronegativity"])
 	panel_r.hide()
 	panel_gas_r.hide()
-
+	visible_butoon_mix(matter1,matter2)
 
 func button_action_left_solid(btn:Button) -> void:
-	testLable.text += str(btn.name)+"\n"
+	matter1 = import_matter(btn.name)
+#	testLable.text += str(matter1[0]["electronegativity"])
 	panel_l.hide()
 	panel_solid_l.hide()
+	visible_butoon_mix(matter1,matter2)
 func button_action_left_liquid(btn:Button) ->void:
-	testLable.text += str(btn.name)+"\n"
+	matter1 = import_matter(btn.name)
+#	testLable.text += str(matter1[0]["electronegativity"])
 	panel_l.hide()
 	panel_liquid_l.hide()
+	visible_butoon_mix(matter1,matter2)
 func button_action_left_gas(btn:Button) ->void:
-	testLable.text += str(btn.name)+"\n"
+	matter1 = import_matter(btn.name)
+	#testLable.text += str(matter1[0]["electronegativity"])
 	panel_l.hide()
 	panel_gas_l.hide()
+	visible_butoon_mix(matter1,matter2)
+	
+
+
+func _on_test_button_pressed():
+	if (float(matter1[0]["id"]) == float(matter2[0]["id"])):
+		testLable.text+="Связь между двумя одинаковыми элементами не образуется\n"
+	elif (int(matter1[0]["group"])==int(matter2[0]["group"])):
+		testLable.text+="Связь между двумя элементами одной группы не образуется\n"
+	#elif ():
+	
+	
+	#((float(matter1[0]["electronegativity"]) > 2) and (float(matter2[0]["electronegativity"]) < 2)) or ((float(matter2[0]["electronegativity"]) > 2) and (float(matter1[0]["electronegativity"]) < 2)):
+		
+		#testLable.text+= 'Связь между '+str(matter1[0]["name"])+' и '+str(matter2[0]["name"])+" возможна\n"
+	#else:
+		#testLable.text+= 'Связь между '+str(matter1[0]["name"])+' и '+str(matter2[0]["name"])+" Невозможна\n"
+	
+	
+	
+	if float(matter1[0]["electronegativity"]) > 2:
+		testLable.text+= str(matter1[0]["name"])+ " "+str(matter1[0]["electronegativity"]) + " - Неметалл\n"
+	else:
+		testLable.text+= str(matter1[0]["name"])+ " "+str(matter1[0]["electronegativity"]) + " - Металл\n"
+	if float(matter2[0]["electronegativity"]) > 2:
+		testLable.text+= str(matter2[0]["name"])+ " "+str(matter2[0]["electronegativity"]) + " - Неметалл\n"
+	else:
+		testLable.text+= str(matter2[0]["name"])+ " "+str(matter2[0]["electronegativity"]) + " - Металл\n"
+
+	

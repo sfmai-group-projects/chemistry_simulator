@@ -1,27 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://deodgikubdrhq"]
+[gd_scene load_steps=11 format=3 uid="uid://deodgikubdrhq"]
 
 [ext_resource type="Texture2D" uid="uid://c750hh6yr3ncg" path="res://Menu/PAC_home_molecules 2.png" id="1_1baru"]
 [ext_resource type="Script" path="res://Menu/Scenes/Scene 1.gd" id="1_qp2qh"]
 [ext_resource type="FontFile" uid="uid://c26prdcm0dljk" path="res://Menu/Cuprum/static/Cuprum-Regular.ttf" id="3_n1m5s"]
+[ext_resource type="Texture2D" uid="uid://p6wjpqduha87" path="res://assets/buttons/ButtonTrial_norm.png" id="4_g7ps3"]
+[ext_resource type="Texture2D" uid="uid://d2od258xd1ogd" path="res://assets/buttons/ButtonTrial.png" id="5_u8bf4"]
+[ext_resource type="Texture2D" uid="uid://1x41opa4tqwo" path="res://assets/buttons/ButtonSB_norm.png" id="6_1ed08"]
+[ext_resource type="BitMap" uid="uid://08rsv8f0mp3j" path="res://assets/buttons/ButtonMask.png" id="6_jn02e"]
+[ext_resource type="Texture2D" uid="uid://bpqb7vxie1x18" path="res://assets/buttons/ButtonSandBox.png" id="7_6q4u6"]
+[ext_resource type="Texture2D" uid="uid://bihvgtrj56xu8" path="res://Menu/Scenes/Download.png" id="9_x7n5t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro35p"]
 bg_color = Color(0, 0, 0, 0)
 border_width_bottom = 5
 border_color = Color(0, 0.713726, 0.937255, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol231"]
-bg_color = Color(0, 0.713726, 0.937255, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm1ep"]
-bg_color = Color(0.85098, 0.85098, 0.85098, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
 
 [node name="Scene 1" type="Control"]
 layout_mode = 3
@@ -70,44 +62,61 @@ theme_override_font_sizes/normal_font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ro35p")
 text = "Игровой режим"
 
-[node name="Custom" type="Button" parent="PacHomeMolecules2/MarginContainer/Main"]
+[node name="Trial" type="TextureButton" parent="PacHomeMolecules2/MarginContainer/Main"]
 custom_minimum_size = Vector2(392, 70)
 layout_mode = 0
-offset_left = 38.0
-offset_top = 134.0
-offset_right = 430.0
-offset_bottom = 223.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_n1m5s")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ol231")
-text = "Песочница"
-
-[node name="Trial" type="Button" parent="PacHomeMolecules2/MarginContainer/Main"]
-custom_minimum_size = Vector2(392, 70)
-layout_mode = 0
-offset_left = 36.0
-offset_top = 248.0
-offset_right = 428.0
-offset_bottom = 337.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_n1m5s")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_lm1ep")
-text = "Испытания"
+offset_left = 34.0
+offset_top = 225.0
+offset_right = 447.0
+offset_bottom = 330.0
+texture_normal = ExtResource("4_g7ps3")
+texture_pressed = ExtResource("5_u8bf4")
+texture_hover = ExtResource("5_u8bf4")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Back" type="Button" parent="PacHomeMolecules2/MarginContainer/Main"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 51.0
-offset_top = 380.0
-offset_right = 132.0
-offset_bottom = 426.0
+offset_left = 60.0
+offset_top = 356.0
+offset_right = 141.0
+offset_bottom = 402.0
 theme_override_fonts/font = ExtResource("3_n1m5s")
 theme_override_font_sizes/font_size = 32
 text = "Назад"
 flat = true
 
-[connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Custom" to="." method="_on_custom_button_down"]
+[node name="SandBox" type="TextureButton" parent="PacHomeMolecules2/MarginContainer/Main"]
+layout_mode = 2
+offset_left = 34.0
+offset_top = 125.0
+offset_right = 447.0
+offset_bottom = 230.0
+texture_normal = ExtResource("6_1ed08")
+texture_pressed = ExtResource("7_6q4u6")
+texture_hover = ExtResource("7_6q4u6")
+texture_click_mask = ExtResource("6_jn02e")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PacHomeMolecules3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_x7n5t")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Trial" to="." method="_on_trial_button_down"]
 [connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/Back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="PacHomeMolecules2/MarginContainer/Main/SandBox" to="." method="_on_custom_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

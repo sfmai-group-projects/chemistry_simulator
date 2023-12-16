@@ -13,7 +13,15 @@ config_version=5
 config/name="Chemistry"
 run/main_scene="res://Menu/Scenes/Menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
+boot_splash/image="res://Menu/Frog.png"
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1360
+window/size/viewport_height=768
+window/size/initial_position_type=0
+window/stretch/mode="viewport"
 
 [dotnet]
 

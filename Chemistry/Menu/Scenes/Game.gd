@@ -427,19 +427,19 @@ func visible_butoon_mix(matter_one,matter_two):
 	if ((matter_one != null) and (matter_two != null)):
 		if(matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 3):
 			number_animation = 1
-			#AnimationGlobal.animation_num = 1
+			GlobalValue.get_num(1)
 		if(matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 2):
 			number_animation = 3
-			#AnimationGlobal.animation_num = 3
+			GlobalValue.get_num(3)
 		if((matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 2) or (matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 3)):
 			number_animation = 2
-			#AnimationGlobal.animation_num = 2
+			GlobalValue.get_num(2)
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 2) or (matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 1)):
 			number_animation = 4
-			#AnimationGlobal.animation_num = 4
+			GlobalValue.get_num(4)
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 3) or (matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 1)):
 			number_animation = 2 #5
-			#AnimationGlobal.animation_num = 2
+			GlobalValue.get_num(2)
 		set_type_animation(number_animation)
 		animated_sprite.visible = true
 		mix_button.disabled = false
@@ -611,6 +611,5 @@ func _on_texture_button_button_down():
 		info_compoud_lable.text=matter1[0]["symbol"]+" + " + matter2[0]["symbol"] +" образуют связь "+ get_compound(matter1,matter2) +"\n"
 	else:
 		info_compoud_lable.text="Металл и металл связь не образуют\n"
-	#_play_animation(number_animation)
 	
 	cont.hide()

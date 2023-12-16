@@ -902,7 +902,7 @@ animations = [{
 "duration": 4.0,
 "texture": SubResource("AtlasTexture_w1j1e")
 }],
-"loop": false,
+"loop": true,
 "name": &"gas_gas",
 "speed": 25.0
 }, {
@@ -1472,7 +1472,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8rufo")
 }],
-"loop": false,
+"loop": true,
 "name": &"jidkost_poroshok",
 "speed": 30.0
 }]
@@ -1778,7 +1778,7 @@ script = ExtResource("5_hkilt")
 position = Vector2(182.75, -163.375)
 scale = Vector2(0.519333, 0.506538)
 sprite_frames = SubResource("SpriteFrames_qsc0b")
-animation = &"gas_gas"
+animation = &"jidkost_poroshok"
 
 [node name="PanelContainer" type="PanelContainer" parent="PacHomeMolecules2"]
 layout_mode = 0
@@ -1826,7 +1826,6 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/GasLayerR/RightGasBack" to="." method="_on_right_gas_back_mouse_entered"]
 [connection signal="button_down" from="PacHomeMolecules2/TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="button_down" from="PacHomeMolecules2/TextureButton" to="PacHomeMolecules2/TextureButton" method="_on_button_down"]
-[connection signal="button_down" from="PacHomeMolecules2/TextureButton" to="PacHomeMolecules2/TextureButton/AnimatedSprite2D" method="_on_texture_button_button_down"]
 [connection signal="animation_looped" from="PacHomeMolecules2/TextureButton/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="animation_looped" from="PacHomeMolecules2/TextureButton/AnimatedSprite2D" to="PacHomeMolecules2/TextureButton" method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="button_down" from="PacHomeMolecules2/PanelContainer/Button" to="." method="_on_button_button_down"]

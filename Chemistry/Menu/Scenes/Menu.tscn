@@ -135,5 +135,4 @@ icon_alignment = 1
 layout_mode = 2
 
 [connection signal="button_down" from="Menu/CenterContainer/Play" to="." method="_on_play_button_down"]
-[connection signal="button_down" from="Menu/CenterContainer/Play" to="Menu/CenterContainer/Play" method="_on_button_down"]
 [connection signal="button_down" from="Menu/CenterContainer3/Exit" to="." method="_on_exit_button_down"]

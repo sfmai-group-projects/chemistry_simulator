@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://8seoowckliti"
+path="res://.godot/imported/MixMask.png-a9122c070df97e4e42d85a20f5f314e5.res"
+
+[deps]
+
+source_file="res://assets/buttons/MixMask.png"
+dest_files=["res://.godot/imported/MixMask.png-a9122c070df97e4e42d85a20f5f314e5.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

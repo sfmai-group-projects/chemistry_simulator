@@ -113,6 +113,7 @@ func read_elements_solid_r():
 		texture.texture = load(path)
 		texture.expand_mode = 3
 		texture.stretch_mode = 0
+		#texture.stretch_ratio = 1
 
 		hboxcon.size = Vector2(50,50)
 		
@@ -151,6 +152,7 @@ func read_elements_liquid_r():
 		texture.texture = load(path)
 		texture.expand_mode = 3
 		texture.stretch_mode = 0
+		#texture.set_stretch_ratio(1)
 
 		hboxcon.size = Vector2(50,50)
 		
@@ -189,6 +191,7 @@ func read_elements_gas_r():
 		texture.texture = load(path)
 		texture.expand_mode = 3
 		texture.stretch_mode = 0
+		#texture.set_stretch_ratio(1)
 
 		hboxcon.size = Vector2(50,50)
 		
@@ -227,6 +230,7 @@ func read_elements_solid_l():
 		texture.texture = load(path)
 		texture.expand_mode = 3
 		texture.stretch_mode = 0
+		#texture.set_stretch_ratio(1)
 
 		hboxcon.size = Vector2(50,50)
 		
@@ -264,6 +268,7 @@ func read_elements_liquid_l():
 		texture.texture = load(path)
 		texture.expand_mode = 3
 		texture.stretch_mode = 0
+		#texture.set_stretch_ratio(1)
 
 		hboxcon.size = Vector2(50,50)
 		
@@ -301,6 +306,7 @@ func read_elements_gas_l():
 		texture.texture = load(path)
 		texture.expand_mode = 3
 		texture.stretch_mode = 0
+		#texture.set_stretch_ratio(1)
 
 		hboxcon.size = Vector2(50,50)
 		
@@ -404,18 +410,36 @@ func set_type_animation(i):
 		5:
 			animated_sprite.animation = "gas_jidkost" #Поменять анимацию на твердое+газ
 
+func _play_animation(i):
+	match i:
+		1:			
+			animated_sprite.play("gas_gas")
+		2:
+			animated_sprite.play("gas_jidkost")
+		3:
+			animated_sprite.play("jidkost_jidkost")
+		4:
+			animated_sprite.play("jidkost_poroshok")
+		5:
+			animated_sprite.play("gas_jidkost") #Поменять анимацию на твердое+газ
+
 func visible_butoon_mix(matter_one,matter_two):
 	if ((matter_one != null) and (matter_two != null)):
 		if(matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 3):
 			number_animation = 1
+			#AnimationGlobal.animation_num = 1
 		if(matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 2):
 			number_animation = 3
+			#AnimationGlobal.animation_num = 3
 		if((matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 2) or (matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 3)):
 			number_animation = 2
+			#AnimationGlobal.animation_num = 2
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 2) or (matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 1)):
 			number_animation = 4
+			#AnimationGlobal.animation_num = 4
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 3) or (matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 1)):
 			number_animation = 2 #5
+			#AnimationGlobal.animation_num = 2
 		set_type_animation(number_animation)
 		animated_sprite.visible = true
 		mix_button.disabled = false
@@ -576,6 +600,7 @@ func _on_button_button_down():
 	
 func _on_animated_sprite_2d_animation_looped():
 	cont.show()
+	#animated_sprite.stop()
 
 func _on_texture_button_button_down():
 	if (float(matter1[0]["id"]) == float(matter2[0]["id"])):
@@ -586,6 +611,6 @@ func _on_texture_button_button_down():
 		info_compoud_lable.text=matter1[0]["symbol"]+" + " + matter2[0]["symbol"] +" образуют связь "+ get_compound(matter1,matter2) +"\n"
 	else:
 		info_compoud_lable.text="Металл и металл связь не образуют\n"
-		
+	#_play_animation(number_animation)
 	
 	cont.hide()

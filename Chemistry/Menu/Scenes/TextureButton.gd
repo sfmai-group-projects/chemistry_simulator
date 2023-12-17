@@ -19,7 +19,8 @@ func _on_button_down():
 			animated_sprite.speed_scale = 1
 			animated_sprite.play("jidkost_poroshok")
 		5:
-			animated_sprite.play("gas_jidkost")
+			animated_sprite.speed_scale = 1
+			animated_sprite.play("gas_poroshok")
 		_:
 			animated_sprite.visible = false
 			animated_sprite.speed_scale = 10

@@ -440,7 +440,7 @@ func visible_butoon_mix(matter_one,matter_two):
 			GlobalValue.get_num(4)
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 3) or (matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 1)):
 			#number_animation = 2 #5
-			GlobalValue.get_num(2)
+			GlobalValue.get_num(5)
 		if((int(matter_one[0]["id"] == 2)) or (int(matter_two[0]["id"] == 2)) or (int(matter_one[0]["id"] == 10)) or (int(matter_two[0]["id"] == 10)) or (int(matter_one[0]["id"] == 18)) or (int(matter_two[0]["id"] == 18)) or (int(matter_one[0]["id"] == 36)) or (int(matter_two[0]["id"] == 36)) or (int(matter_one[0]["id"] == 54)) or (int(matter_two[0]["id"] == 54)) or (int(matter_one[0]["id"] == 86)) or (int(matter_two[0]["id"] == 86))):
 			GlobalValue.get_num(10)
 		if((float(matter_one[0]["electronegativity"]) < 2) and (float(matter_two[0]["electronegativity"]) < 2)):

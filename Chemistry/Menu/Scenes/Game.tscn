@@ -1215,15 +1215,15 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_she0n")
 }, {
-"duration": 0.01,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tx5gh")
 }],
 "loop": true,
 "name": &"jidkost_jidkost",
-"speed": 60.0
+"speed": 40.0
 }, {
 "frames": [{
-"duration": 0.01,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_8rufo")
 }, {
 "duration": 1.0,
@@ -1469,12 +1469,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kocnr")
 }, {
-"duration": 0.01,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_m6ayx")
 }],
 "loop": true,
 "name": &"jidkost_poroshok",
-"speed": 30.0
+"speed": 40.0
 }]
 
 [node name="Game" type="Control"]
@@ -1779,7 +1779,7 @@ visible = false
 position = Vector2(182.75, -163.375)
 scale = Vector2(0.519333, 0.506538)
 sprite_frames = SubResource("SpriteFrames_qsc0b")
-animation = &"gas_gas"
+animation = &"jidkost_jidkost"
 
 [node name="PanelContainer" type="PanelContainer" parent="PacHomeMolecules2"]
 layout_mode = 0
@@ -1800,6 +1800,78 @@ offset_top = -85.0
 offset_right = 282.0
 offset_bottom = -5.0
 text = "Реакция не возможна"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ControlInfoR" type="Control" parent="PacHomeMolecules2"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 820.0
+offset_top = 60.0
+offset_right = 987.0
+offset_bottom = 275.0
+
+[node name="TextureInfo" type="TextureRect" parent="PacHomeMolecules2/ControlInfoR"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 137.0
+offset_bottom = 147.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PacHomeMolecules2/ControlInfoR"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 137.0
+offset_bottom = 31.0
+text = "Вы выбрали:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LableInfo" type="Label" parent="PacHomeMolecules2/ControlInfoR"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 137.0
+offset_right = 137.0
+offset_bottom = 215.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlInfoL" type="Control" parent="PacHomeMolecules2"]
+visible = false
+anchors_preset = 0
+offset_left = 371.0
+offset_top = 60.0
+offset_right = 538.0
+offset_bottom = 275.0
+
+[node name="TextureInfo" type="TextureRect" parent="PacHomeMolecules2/ControlInfoL"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 137.0
+offset_bottom = 147.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PacHomeMolecules2/ControlInfoL"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 137.0
+offset_bottom = 31.0
+text = "Вы выбрали:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LableInfo" type="Label" parent="PacHomeMolecules2/ControlInfoL"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 137.0
+offset_right = 137.0
+offset_bottom = 215.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702759460
+::res://::1702800048
+GlobalValue.gd::GDScript::-1::1702763956::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::8294292518946426541::1702386851::1702575952::1::::<><>::
 ::res://addons/::1702759095
 ::res://addons/godot-sqlite/::1702759095
@@ -156,16 +157,16 @@ Cuprum-MediumItalic.ttf::FontFile::1130065978444963486::1702386851::1702575951::
 Cuprum-Regular.ttf::FontFile::6732877130615233424::1702386851::1702575951::1::::<><>::
 Cuprum-SemiBold.ttf::FontFile::7346831378900384070::1702386851::1702575951::1::::<><>::
 Cuprum-SemiBoldItalic.ttf::FontFile::2607377836005254744::1702386851::1702575951::1::::<><>::
-::res://Menu/Scenes/::1702759375
+::res://Menu/Scenes/::1702764906
 AnimatedSprite2D.gd::GDScript::-1::1702556807::0::1::::<>AnimatedSprite2D<>::
 Download.png::CompressedTexture2D::2963668873342886109::1702560604::1702575951::1::::<><>::
-Game.gd::GDScript::-1::1702759193::0::1::::<>Node<>::
-Game.tscn::PackedScene::5876397809360746343::1702759375::0::1::::<><>::res://Menu/Scenes/Game.gd<>uid://b05yl4odoq66s::::res://assets/buttons/Mix.png<>uid://c2stiayx1fhwb::::res://assets/buttons/MixMask1.png<>uid://8seoowckliti::::res://assets/buttons/MixMask.png<>res://Menu/Scenes/TextureButton.gd<>uid://dqyn8tgnb7sn7::::res://assets/animation/FullGG.png<>uid://bt1s2ur47j1pg::::res://assets/animation/FullGJ.png<>uid://derydpe4enk2::::res://assets/animation/FullJJ.png<>uid://btvrxkdyinu4h::::res://assets/animation/FullJP.png
+Game.gd::GDScript::-1::1702764470::0::1::::<>Node<>::
+Game.tscn::PackedScene::5876397809360746343::1702764906::0::1::::<><>::res://Menu/Scenes/Game.gd<>uid://b05yl4odoq66s::::res://assets/buttons/Mix.png<>uid://c2stiayx1fhwb::::res://assets/buttons/MixMask1.png<>uid://8seoowckliti::::res://assets/buttons/MixMask.png<>res://Menu/Scenes/TextureButton.gd<>uid://dqyn8tgnb7sn7::::res://assets/animation/FullGG.png<>uid://bt1s2ur47j1pg::::res://assets/animation/FullGJ.png<>uid://derydpe4enk2::::res://assets/animation/FullJJ.png<>uid://btvrxkdyinu4h::::res://assets/animation/FullJP.png
 Menu.gd::GDScript::-1::1702558807::0::1::::<>Control<>::
-Menu.tscn::PackedScene::3018483204007349327::1702759375::0::1::::<><>::res://Menu/Scenes/Menu.gd<>uid://c750hh6yr3ncg::::res://Menu/PAC_home_molecules 2.png<>uid://c26prdcm0dljk::::res://Menu/Cuprum/static/Cuprum-Regular.ttf<>uid://b7lhafxb0mw88::::res://Menu/Cuprum/Cuprum.ttf
+Menu.tscn::PackedScene::3018483204007349327::1702764779::0::1::::<><>::res://Menu/Scenes/Menu.gd<>uid://c750hh6yr3ncg::::res://Menu/PAC_home_molecules 2.png<>uid://c26prdcm0dljk::::res://Menu/Cuprum/static/Cuprum-Regular.ttf<>uid://b7lhafxb0mw88::::res://Menu/Cuprum/Cuprum.ttf
 MenuMatter2.gd::GDScript::-1::1702386851::0::1::::<>MenuButton<>::
 Scene 1.gd::GDScript::-1::1702576637::0::1::::<>Control<>::
-Scene 1.tscn::PackedScene::7469112016475026282::1702759375::0::1::::<><>::uid://c750hh6yr3ncg::::res://Menu/PAC_home_molecules 2.png<>res://Menu/Scenes/Scene 1.gd<>uid://c26prdcm0dljk::::res://Menu/Cuprum/static/Cuprum-Regular.ttf<>uid://p6wjpqduha87::::res://assets/buttons/ButtonTrial_norm.png<>uid://d2od258xd1ogd::::res://assets/buttons/ButtonTrial.png<>uid://1x41opa4tqwo::::res://assets/buttons/ButtonSB_norm.png<>uid://08rsv8f0mp3j::::res://assets/buttons/ButtonMask.png<>uid://bpqb7vxie1x18::::res://assets/buttons/ButtonSandBox.png<>uid://bihvgtrj56xu8::::res://Menu/Scenes/Download.png
-TextureButton.gd::GDScript::-1::1702556808::0::1::::<>TextureButton<>::
+Scene 1.tscn::PackedScene::7469112016475026282::1702764779::0::1::::<><>::uid://c750hh6yr3ncg::::res://Menu/PAC_home_molecules 2.png<>res://Menu/Scenes/Scene 1.gd<>uid://c26prdcm0dljk::::res://Menu/Cuprum/static/Cuprum-Regular.ttf<>uid://p6wjpqduha87::::res://assets/buttons/ButtonTrial_norm.png<>uid://d2od258xd1ogd::::res://assets/buttons/ButtonTrial.png<>uid://1x41opa4tqwo::::res://assets/buttons/ButtonSB_norm.png<>uid://08rsv8f0mp3j::::res://assets/buttons/ButtonMask.png<>uid://bpqb7vxie1x18::::res://assets/buttons/ButtonSandBox.png<>uid://bihvgtrj56xu8::::res://Menu/Scenes/Download.png
+TextureButton.gd::GDScript::-1::1702764889::0::1::::<>TextureButton<>::
 ::res://Menu/Script text/::1702759096
 Play.gd::GDScript::-1::1702386851::0::1::::<>Button<>::

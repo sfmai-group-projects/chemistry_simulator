@@ -15,6 +15,9 @@ var animated_sprite = null
 var buttonsRight_solid = []
 var buttonsRight_liquid = []
 var buttonsRight_gas = []
+var info_r = null
+var info_r_testure = null
+var info_r_lable = null
 
 var panel_l = null
 var panel_solid_l = null
@@ -23,6 +26,10 @@ var panel_gas_l = null
 var buttonsLeft_solid = []
 var buttonsLeft_liquid = []
 var buttonsLeft_gas = []
+var info_l = null
+var info_l_testure = null
+var info_l_lable = null
+
 var matter1 = null;
 var matter2 = null;
 
@@ -39,6 +46,9 @@ func _ready() ->void:
 	panel_liquid_r = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/LiquidLayerR
 	panel_gas_r = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Right/Matter2/MatterRight/RightBack/GasLayerR
 	animated_sprite = $PacHomeMolecules2/TextureButton/AnimatedSprite2D
+	info_r = $PacHomeMolecules2/ControlInfoR
+	info_r_testure = $PacHomeMolecules2/ControlInfoR/TextureInfo
+	info_r_lable = $PacHomeMolecules2/ControlInfoR/LableInfo
 		
 	panel_r.visible = false
 	panel_solid_r.visible = false
@@ -49,6 +59,9 @@ func _ready() ->void:
 	panel_solid_l = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/SolidLayerL
 	panel_liquid_l = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/LiquidLayerL
 	panel_gas_l = $PacHomeMolecules2/MarginContainer2/HBoxContainer/Left/Matter1/MatterLeft/LeftBack/GasLayerL
+	info_l = $PacHomeMolecules2/ControlInfoL
+	info_l_testure = $PacHomeMolecules2/ControlInfoL/TextureInfo
+	info_l_lable = $PacHomeMolecules2/ControlInfoL/LableInfo
 	
 	panel_l.visible = false
 	panel_solid_l.visible = false
@@ -410,40 +423,43 @@ func set_type_animation(i):
 		5:
 			animated_sprite.animation = "gas_jidkost" #Поменять анимацию на твердое+газ
 
-func _play_animation(i):
-	match i:
-		1:			
-			animated_sprite.play("gas_gas")
-		2:
-			animated_sprite.play("gas_jidkost")
-		3:
-			animated_sprite.play("jidkost_jidkost")
-		4:
-			animated_sprite.play("jidkost_poroshok")
-		5:
-			animated_sprite.play("gas_jidkost") #Поменять анимацию на твердое+газ
 
 func visible_butoon_mix(matter_one,matter_two):
 	if ((matter_one != null) and (matter_two != null)):
 		if(matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 3):
-			number_animation = 1
+		#	number_animation = 1
 			GlobalValue.get_num(1)
 		if(matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 2):
-			number_animation = 3
+			#number_animation = 3
 			GlobalValue.get_num(3)
 		if((matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 2) or (matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 3)):
-			number_animation = 2
+			#number_animation = 2
 			GlobalValue.get_num(2)
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 2) or (matter_one[0]["stateid"] == 2 and matter_two[0]["stateid"] == 1)):
-			number_animation = 4
+			#number_animation = 4
 			GlobalValue.get_num(4)
 		if((matter_one[0]["stateid"] == 1 and matter_two[0]["stateid"] == 3) or (matter_one[0]["stateid"] == 3 and matter_two[0]["stateid"] == 1)):
-			number_animation = 2 #5
+			#number_animation = 2 #5
 			GlobalValue.get_num(2)
-		set_type_animation(number_animation)
-		animated_sprite.visible = true
+		if((int(matter_one[0]["id"] == 2)) or (int(matter_two[0]["id"] == 2)) or (int(matter_one[0]["id"] == 10)) or (int(matter_two[0]["id"] == 10)) or (int(matter_one[0]["id"] == 18)) or (int(matter_two[0]["id"] == 18)) or (int(matter_one[0]["id"] == 36)) or (int(matter_two[0]["id"] == 36)) or (int(matter_one[0]["id"] == 54)) or (int(matter_two[0]["id"] == 54)) or (int(matter_one[0]["id"] == 86)) or (int(matter_two[0]["id"] == 86))):
+			GlobalValue.get_num(10)
+		if((float(matter_one[0]["electronegativity"]) < 2) and (float(matter_two[0]["electronegativity"]) < 2)):
+			GlobalValue.get_num(10)
+		if(int(matter_one[0]["id"])==int(matter_two[0]["id"])):
+			GlobalValue.get_num(10)
+		set_type_animation(GlobalValue.global_num)
+		#animated_sprite.visible = true
 		mix_button.disabled = false
 	
+
+func set_info(i, textureRect, lable):
+	db.open_db()
+	db.query("SELECT * FROM main.elements WHERE main.elements.id = "+ str(i)+";")
+	var path = db.query_result[0]["imglink"]
+	textureRect.texture = load(path)
+	lable.text = '['+str(db.query_result[0]["symbol"])+'] '+str(db.query_result[0]["name"])
+	pass
+
 
 func _on_matter_2_mouse_entered():
 	panel_r.show()
@@ -533,16 +549,25 @@ func _on_left_gas_back_mouse_entered():
 
 func button_action_right_solid(btn:Button) -> void:
 	matter2 = import_matter(btn.name)
+	set_info(int(matter2[0]["id"]), info_r_testure,info_r_lable)
+	info_r.visible = true
+	animated_sprite.visible = false
 	panel_r.hide()
 	panel_solid_r.hide()
 	visible_butoon_mix(matter1,matter2)
 func button_action_right_liquid(btn:Button) ->void:
 	matter2 = import_matter(btn.name)
+	set_info(int(matter2[0]["id"]), info_r_testure,info_r_lable)
+	info_r.visible = true
+	animated_sprite.visible = false
 	panel_r.hide()
 	panel_liquid_r.hide()
 	visible_butoon_mix(matter1,matter2)
 func button_action_right_gas(btn:Button) ->void:
 	matter2 = import_matter(btn.name)
+	set_info(int(matter2[0]["id"]), info_r_testure,info_r_lable)
+	info_r.visible = true
+	animated_sprite.visible = false
 	panel_r.hide()
 	panel_gas_r.hide()
 	visible_butoon_mix(matter1,matter2)
@@ -550,16 +575,25 @@ func button_action_right_gas(btn:Button) ->void:
 
 func button_action_left_solid(btn:Button) -> void:
 	matter1 = import_matter(btn.name)
+	set_info(int(matter1[0]["id"]), info_l_testure,info_l_lable)
+	info_l.visible = true
+	animated_sprite.visible = false
 	panel_l.hide()
 	panel_solid_l.hide()
 	visible_butoon_mix(matter1,matter2)
 func button_action_left_liquid(btn:Button) ->void:
 	matter1 = import_matter(btn.name)
+	set_info(int(matter1[0]["id"]), info_l_testure,info_l_lable)
+	info_l.visible = true
+	animated_sprite.visible = false
 	panel_l.hide()
 	panel_liquid_l.hide()
 	visible_butoon_mix(matter1,matter2)
 func button_action_left_gas(btn:Button) ->void:
 	matter1 = import_matter(btn.name)
+	set_info(int(matter1[0]["id"]), info_l_testure,info_l_lable)
+	info_l.visible = true
+	animated_sprite.visible = false
 	panel_l.hide()
 	panel_gas_l.hide()
 	visible_butoon_mix(matter1,matter2)
@@ -596,11 +630,14 @@ func _on_margin_container_2_mouse_entered():
 
 
 func _on_button_button_down():
+	mix_button.disabled = true
+	info_r.visible = false
+	info_l.visible = false
+	animated_sprite.visible = false
 	cont.hide()
 	
 func _on_animated_sprite_2d_animation_looped():
 	cont.show()
-	#animated_sprite.stop()
 
 func _on_texture_button_button_down():
 	if (float(matter1[0]["id"]) == float(matter2[0]["id"])):

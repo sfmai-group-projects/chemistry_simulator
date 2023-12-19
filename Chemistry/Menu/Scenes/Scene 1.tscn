@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1x41opa4tqwo" path="res://assets/buttons/ButtonSB_norm.png" id="6_1ed08"]
 [ext_resource type="BitMap" uid="uid://08rsv8f0mp3j" path="res://assets/buttons/ButtonMask.png" id="6_jn02e"]
 [ext_resource type="Texture2D" uid="uid://bpqb7vxie1x18" path="res://assets/buttons/ButtonSandBox.png" id="7_6q4u6"]
-[ext_resource type="Texture2D" uid="uid://bihvgtrj56xu8" path="res://Menu/Scenes/Download.png" id="9_x7n5t"]
+[ext_resource type="Texture2D" uid="uid://bppk2n1m7jg4t" path="res://assets/vodaBG.png" id="9_h60pq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro35p"]
 bg_color = Color(0, 0, 0, 0)
@@ -108,8 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_x7n5t")
-expand_mode = 1
+texture = ExtResource("9_h60pq")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

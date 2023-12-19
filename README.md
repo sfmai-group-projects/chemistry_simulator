@@ -20,6 +20,8 @@
 4. Выбор режима симулятора.
 
 *Будет реализовано в будущих версиях*
+
+
 Прототип: https://www.figma.com/file/9D2HyTpmULSO2VhvDAIW0S/%D0%9A%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82-%D0%B8%D0%B3%D1%80%D1%8B?type=design&node-id=0-1&mode=design&t=fywfoaCnZyiKlF83-0
 Скриншоты:
 

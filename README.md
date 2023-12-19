@@ -23,6 +23,11 @@
 
 Прототип: https://www.figma.com/file/9D2HyTpmULSO2VhvDAIW0S/%D0%9A%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82-%D0%B8%D0%B3%D1%80%D1%8B?type=design&node-id=0-1&mode=design&t=fywfoaCnZyiKlF83-0
 Скриншоты:
-![Screen1](https://github.com/sfmai-group-projects/chemistry_simulator/assets/132296559/b237714f-dea3-4ee1-a3d7-a939543e75a9)
+![Screen3](https://github.com/sfmai-group-projects/chemistry_simulator/assets/132296559/5534f24d-5e04-4ee4-8768-e55f1a92ddec)
 
 ![Screen2](https://github.com/sfmai-group-projects/chemistry_simulator/assets/132296559/27c51782-ffcb-4f75-917b-f6599bb8069a)
+
+![Screen4](https://github.com/sfmai-group-projects/chemistry_simulator/assets/132296559/b58afb0a-b642-4dad-967f-668b6436b052)
+
+![Screen1](https://github.com/sfmai-group-projects/chemistry_simulator/assets/132296559/b237714f-dea3-4ee1-a3d7-a939543e75a9)
+

@@ -1,6 +1,3 @@
-res://Menu/Scenes/Game.tscn
-res://Menu/Scenes/Game.gd
-res://Menu/Scenes/Scene 1.tscn
-res://Menu/Scenes/preload.tscn
 res://Menu/Scenes/Menu.tscn
 res://Menu/Scenes/BackGame.gd
+res://Menu/Scenes/Game.gd
